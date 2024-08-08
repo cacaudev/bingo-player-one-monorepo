@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bingo-player-one-monorepo/bingo-domain": ["libs/domain/src/index.ts"],
+      "@bingo-player-one-monorepo/bingo-ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
