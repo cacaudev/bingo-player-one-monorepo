@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "apps/bingo-app/src",
-  "tags": [],
+  "tags": ["type:application", "scope:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",

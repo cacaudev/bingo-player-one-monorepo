@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve bingo-app",
-    "build": "npx nx build bingo-app"
+    "build": "nx build bingo-app",
+    "graph": "nx graph"
   },
   "private": true,
   "dependencies": {
