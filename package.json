@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve bingo-app",
     "build": "nx build bingo-app",
-    "graph": "nx graph"
+    "dep:reset": "nx reset",
+    "graph": "nx graph",
+    "dep:graph": "nx dep-graph"
   },
   "private": true,
   "dependencies": {

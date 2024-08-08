@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { Jogo } from '@bingo-player-one-monorepo/bingo-domain';
 
 @Component({
   standalone: true,
@@ -11,4 +12,9 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'bingo-app';
+
+  showTabela() {
+    const novoJogo = new Jogo('Teste Tabela', 2, 2);
+    return novoJogo.getNome();
+  }
 }
