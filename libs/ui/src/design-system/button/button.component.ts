@@ -8,4 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './button.component.css',
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix
-export class Button {}
+export class ButtonUIComponent {}
