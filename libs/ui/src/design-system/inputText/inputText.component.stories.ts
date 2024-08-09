@@ -4,6 +4,7 @@ import { InputTextUIComponent } from './inputText.component';
 const meta: Meta<InputTextUIComponent> = {
   component: InputTextUIComponent,
   title: 'Design System/Atomicos/Input Texto',
+  tags: ['autodocs'],
 };
 export default meta;
 type Story = StoryObj<InputTextUIComponent>;
