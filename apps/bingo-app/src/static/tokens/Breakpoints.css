@@ -1,0 +1,18 @@
+:root {
+  /* Breakpoints
+      ================================================================= */
+  /* Mobile devices*/
+  --breakpoint-small-min: 320px;
+  --breakpoint-small-max: 480px;
+  /* iPads, Tablet */
+  --breakpoint-medium-min: 481px;
+  --breakpoint-medium-max: 768px;
+  /* Small screens, laptops */
+  --breakpoint-regular-min: 769px;
+  --breakpoint-regular-max: 1024px;
+  /* Desktop, large screens */
+  --breakpoint-large-min: 1025px;
+  --breakpoint-large-max: 1200px;
+  /* Extra large screens, TV */
+  --breakpoint-extra-large-min: 1201px;
+}

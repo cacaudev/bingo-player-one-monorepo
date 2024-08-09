@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("../src/static/styles/Base.css");
+@import url("../src/static/fonts/Fonts.css");
+@import url("../src/static/tokens/Tokens.css");
+@import url("../src/static/theme/Themes.css");
+@import url("../src/static/styles/Global.css");
+@import url("../src/static/styles/Transitions.css");
+@import url("../src/static/styles/Layout.css");
+@import url("../src/static/styles/Components.css");

@@ -10,7 +10,7 @@
     "dep:graph": "nx dep-graph",
     "test:app": "nx test bingo-app",
     "test:domain": "nx test bingo-domain",
-    "storybook:ui": "npx nx storybook bingo-ui"
+    "storybook:ui": "nx storybook bingo-ui"
   },
   "private": true,
   "dependencies": {

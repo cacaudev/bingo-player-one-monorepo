@@ -1,0 +1,43 @@
+:root {
+  --text-primary-light: #f1f1f1;
+  --text-secondary-light: #6c757d;
+
+  --input-bg-light: #fff;
+  --box-shadow-light: 0px 0px 35px 0px rgba(49, 57, 66, 0.5);
+
+  --topbar-bg-light: #ffffff;
+  --topbar-item-color-light: #6c757d;
+  --topbar-item-hover-color-light: #727cf5;
+
+  --body-color-light: #343a40;
+  --body-bg-light: #F9FAFD;
+
+  --sidebar-bg-light: #3a444e;
+  --sidebar-item-color-light: #8391a2;
+  --sidebar-item-hover-color-light: #343a40;
+  --sidebar-item-hover-bg-color-light:#ffffff;
+  --sidebar-item-active-color-light: #343a40;
+  --sidebar-item-active-bg-light:  #bccee4; 
+}
+
+.light-theme {
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+
+  --input-bg: var(--input-bg-light);
+  --box-shadow: var(--box-shadow-light);
+
+  --topbar-bg: var(--topbar-bg-light);
+  --topbar-item-color: var(--topbar-item-color-light);
+  --topbar-item-hover-color: var(--topbar-item-hover-color-light);
+
+  --body-color: var(--body-color-light);
+  --body-bg: var(--body-bg-light);
+
+  --sidebar-bg: var(--sidebar-bg-light);
+  --sidebar-item-color: var(--sidebar-item-color-light);
+  --sidebar-item-hover-color: var(--sidebar-item-hover-color-light);
+  --sidebar-item-hover-bg-color: var(--sidebar-item-hover-bg-color-light);
+  --sidebar-item-active-color: var(--sidebar-item-active-color-light);
+  --sidebar-item-active-bg: var(--sidebar-item-active-bg-light);
+}

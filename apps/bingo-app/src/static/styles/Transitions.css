@@ -1,0 +1,9 @@
+:root {
+  /* Transition
+      ================================================================= */
+  --transition-faster: 0.1s;
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.4s;
+  --transition-slower: 0.5s;
+}

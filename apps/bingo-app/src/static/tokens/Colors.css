@@ -1,0 +1,16 @@
+:root {
+  --primary-blue: rgb(0, 0, 255);
+  --secondary-blue: rgb(96, 96, 182);
+
+  /* Gray colors */
+  --color-gray-1: #ffffff;
+  --color-gray-2: #eeeeee;
+  --color-gray-3: #d5d5d5;
+  --color-gray-4: #bbbbbb;
+  --color-gray-5: #a1a1a1;
+  --color-gray-6: #888888;
+  --color-gray-7: #6f6f6f;
+  --color-gray-8: #555555;
+  --color-gray-9: #3c3c3c;
+  --color-gray-10: #222222;
+}

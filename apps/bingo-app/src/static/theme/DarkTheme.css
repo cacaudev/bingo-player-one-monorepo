@@ -1,0 +1,42 @@
+:root {
+    --text-primary-dark: #f1f1f1;
+    --text-secondary-dark: #6c757d;
+
+    --input-bg-dark: #404954;
+    --box-shadow-dark: 0px 0px 35px 0px rgba(49, 57, 66, 0.5);
+
+    --topbar-bg-dark: #3a444e;
+    --topbar-item-color-dark: #8391a2;
+    --topbar-item-hover-color-dark: #bccee4;
+
+    --body-color-dark: #aab8c5;
+    --body-bg-dark: #343a40;
+
+    --sidebar-bg-dark: #3a444e;
+    --sidebar-item-color-dark: #8391a2;
+    --sidebar-item-hover-color-dark: #343a40;
+    --sidebar-item-hover-bg-color-dark :#ffffff;
+    --sidebar-item-active-color-dark: #343a40;
+    --sidebar-item-active-bg-dark:#bccee4; 
+  }
+  .dark-theme {
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    
+    --input-bg: var(--input-bg-dark);
+    --box-shadow: var(--box-shadow-dark);
+
+    --topbar-bg: var(--topbar-bg-dark);
+    --topbar-item-color: var(--topbar-item-color-dark);
+    --topbar-item-hover-color: var(--topbar-item-hover-color-dark);
+
+    --body-color: var(--body-color-dark);
+    --body-bg: var(--body-bg-dark);
+
+    --sidebar-bg: var(--sidebar-bg-dark);
+    --sidebar-item-color: var(--sidebar-item-color-dark);
+    --sidebar-item-hover-color: var(--sidebar-item-hover-color-dark);
+    --sidebar-item-hover-bg-color: var(--sidebar-item-hover-bg-color-dark);
+    --sidebar-item-active-color: var(--sidebar-item-active-color-dark);
+    --sidebar-item-active-bg: var(--sidebar-item-active-bg-dark);
+  }

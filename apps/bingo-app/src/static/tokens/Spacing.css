@@ -1,0 +1,13 @@
+:root {
+  /* Space
+     ================================================================= */
+  --space-base-unit: var(--base-unit);
+  /* Margin, Padding - 8x8 grid */
+  --space-8: calc(var(--space-base-unit) * 2);
+  --space-16: calc(var(--space-base-unit) * 4);
+  --space-24: calc(var(--space-base-unit) * 6);
+  --space-32: calc(var(--space-base-unit) * 8);
+  --space-40: calc(var(--space-base-unit) * 10);
+  --space-48: calc(var(--space-base-unit) * 12);
+  --space-64: calc(var(--space-base-unit) * 16);
+}

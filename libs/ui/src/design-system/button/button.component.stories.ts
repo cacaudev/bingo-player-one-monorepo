@@ -3,7 +3,7 @@ import { ButtonUIComponent } from './button.component';
 
 const meta: Meta<ButtonUIComponent> = {
   component: ButtonUIComponent,
-  title: 'ButtonComponent',
+  title: 'Design System/Atomicos/Botao',
 };
 export default meta;
 type Story = StoryObj<ButtonUIComponent>;
