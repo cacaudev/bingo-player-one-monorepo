@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
  */
 export class JogoService {
   private jogoSubject = new BehaviorSubject<Jogo | null>(null);
+  jogo$ = this.jogoSubject.asObservable();
 
   novoJogo(numberOfLines: number, numberOfColumns: number) {
     const currentDate = new Date();

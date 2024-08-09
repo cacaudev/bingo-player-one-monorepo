@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonUIComponent } from '@bingo-player-one-monorepo/bingo-ui';
 import { JogoService } from '../../../infra/services/Jogo.service';
 import { RouterLink } from '@angular/router';
+import { Tabela } from '@bingo-player-one-monorepo/bingo-domain';
 
 @Component({
   selector: 'app-tabela',
@@ -13,7 +14,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './tabela.component.scss',
 })
 export class TabelaComponent implements OnInit {
-  constructor(private jogoService: JogoService) {}
+  tabelaAtual: Tabela | null = null;
+
+  constructor(private jogoService: JogoService) {
+    /**
+     * Adiciona um observador para o jogo armazenado na store para sempre
+     * atualizar a tabela atual com o valor armazenado
+     */
+    this.jogoService.jogo$.subscribe((jogoArmazenado) => {
+      this.tabelaAtual = jogoArmazenado != null ? jogoArmazenado.tabela : null;
+    });
+  }
+
   ngOnInit(): void {
     this.showTabelaNome();
   }
