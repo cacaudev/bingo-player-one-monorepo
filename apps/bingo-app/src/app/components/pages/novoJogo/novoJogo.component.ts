@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { Jogo } from '@bingo-player-one-monorepo/bingo-domain';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { ButtonComponent } from '@bingo-player-one-monorepo/bingo-ui';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './novoJogo.component.html',
   styleUrl: './novoJogo.component.scss',
 })
