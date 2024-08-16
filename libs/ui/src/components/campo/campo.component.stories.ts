@@ -11,7 +11,7 @@ type Story = StoryObj<CampoComponent>;
 
 export const Primary: Story = {
   args: {
-    valor: 'text',
+    valor: '1',
     marcado: false,
     x: 1,
     y: 2,

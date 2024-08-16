@@ -11,7 +11,7 @@ type Story = StoryObj<TabelaComponent>;
 
 export const Primary: Story = {
   args: {
-
-
+    tabelaLinhas: 5,
+    tabelaColunas: 5
   },
 };

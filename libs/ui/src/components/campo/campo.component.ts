@@ -10,7 +10,7 @@ import { ValorCampo } from '@bingo-player-one-monorepo/bingo-domain';
   styleUrl: './campo.component.scss',
 })
 export class CampoComponent {
-  @Input() valor: ValorCampo = null;
+  @Input() valor: ValorCampo = "1";
   @Input() marcado = false;
   @Input() x = -1;
   @Input() y = -1;

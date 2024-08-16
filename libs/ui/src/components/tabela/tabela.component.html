@@ -2,7 +2,12 @@
   <table>
     <tr *ngFor="let row of tabela.campos">
       <td *ngFor="let campo of row">
-        <lib-jogo-campo></lib-jogo-campo>
+        <lib-jogo-campo
+          [valor]="campo.getValor()"
+          [marcado]="campo.getMarcado()"
+          [x]="campo.getIndice().getX()"
+          [y]="campo.getIndice().getY()"
+        />
       </td>
     </tr>
   </table>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tabela } from '@bingo-player-one-monorepo/bingo-domain';
 import { CampoComponent } from '../campo/campo.component';
 
@@ -10,14 +10,13 @@ import { CampoComponent } from '../campo/campo.component';
   templateUrl: './tabela.component.html',
   styleUrl: './tabela.component.scss',
 })
-export class TabelaComponent {
+export class TabelaComponent implements OnInit {
   @Input() tabelaLinhas = 3;
   @Input() tabelaColunas = 3;
-  tabela: Tabela;
 
+  tabela: Tabela = new Tabela(this.tabelaColunas, this.tabelaLinhas);
 
-  constructor() {
+  ngOnInit(): void {
     this.tabela = new Tabela(this.tabelaColunas, this.tabelaLinhas);
-
   }
 }
