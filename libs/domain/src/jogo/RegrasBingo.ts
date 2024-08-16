@@ -54,7 +54,7 @@ class RegrasBingo {
     this.validarRegras();
   }
 
-  private verificarRegra(regraAtualizada: boolean) {
+  public verificarRegra(regraAtualizada: boolean) {
     const isVazio = (valor: boolean): boolean =>
       valor == null || valor == undefined;
     if (isVazio(regraAtualizada)) {
