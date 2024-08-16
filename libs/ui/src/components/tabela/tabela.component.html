@@ -1,0 +1,9 @@
+<div *ngIf="tabela">
+  <table>
+    <tr *ngFor="let row of tabela.campos">
+      <td *ngFor="let campo of row">
+        <lib-jogo-campo></lib-jogo-campo>
+      </td>
+    </tr>
+  </table>
+</div>
