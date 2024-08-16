@@ -1,4 +1,4 @@
-import { Jogo, Tabela } from '@bingo-player-one-monorepo/bingo-domain';
+import { Jogo, RegrasBingo, Tabela } from '@bingo-player-one-monorepo/bingo-domain';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -45,5 +45,9 @@ export class JogoService {
       throw new Error('NO_GAME_ON_STORE');
     }
     this.jogoSubject.value.jogarNumero(numeroSorteado);
+  }
+
+  setarRegras(regras: RegrasBingo) {
+   return true;
   }
 }
