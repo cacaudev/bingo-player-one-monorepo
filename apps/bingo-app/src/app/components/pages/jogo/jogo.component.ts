@@ -32,7 +32,7 @@ export class JogoComponent implements OnInit {
     this.jogoService.lerJogo();
   }
 
-  jogarNumero(numeroSorteado: number) {
+  jogarNumero(numeroSorteado: string) {
     this.jogoService.jogarNumeroSorteado(numeroSorteado);
   }
 }

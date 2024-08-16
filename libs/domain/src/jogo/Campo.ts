@@ -1,6 +1,6 @@
 import { IndiceCampo } from './IndiceCampo';
 
-type ValorCampo = number | string | null;
+type ValorCampo = string | null;
 
 class Campo {
   private readonly indice: IndiceCampo;

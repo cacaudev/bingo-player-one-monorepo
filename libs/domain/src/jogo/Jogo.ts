@@ -91,7 +91,7 @@ class Jogo {
     this.numerosSorteados.pop();
   }
 
-  public jogarNumero(valorSorteado: number): {
+  public jogarNumero(valorSorteado: string): {
     foiBingo: boolean;
     foiAchado: boolean;
     indiceCampo: IndiceCampo;

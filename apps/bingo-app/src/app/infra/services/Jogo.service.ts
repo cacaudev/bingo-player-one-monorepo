@@ -40,7 +40,7 @@ export class JogoService {
     return this.jogoSubject.value.tabela;
   }
 
-  jogarNumeroSorteado(numeroSorteado: number) {
+  jogarNumeroSorteado(numeroSorteado: string) {
     if (!this.jogoSubject.value) {
       throw new Error('NO_GAME_ON_STORE');
     }

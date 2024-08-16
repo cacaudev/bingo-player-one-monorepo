@@ -1,11 +1,11 @@
 import { IndiceCampo } from "./IndiceCampo";
 
 class NumeroSorteado {
-  private readonly valor: number = 0;
+  private readonly valor: string = "0";
   private readonly achado: boolean = false;
   private readonly indiceCampo: IndiceCampo = new IndiceCampo(-1,-1);
 
-  constructor(valor: number, achado: boolean, indice: IndiceCampo = new IndiceCampo(-1,-1)) {
+  constructor(valor: string, achado: boolean, indice: IndiceCampo = new IndiceCampo(-1,-1)) {
     if (achado) {
       this.indiceCampo = indice;
     }
@@ -28,9 +28,9 @@ class NumeroSorteado {
     }
   }
 
-  public static verificarNumero(numero: number) {
-    const isValido = (numero: number): boolean =>
-      numero != null && numero != undefined && numero >= 0;
+  public static verificarNumero(numero: string) {
+    const isValido = (numero: string): boolean =>
+      numero != null && numero != undefined;
     if (!isValido(numero)) {
       throw new Error("Número sorteado não pode ser vazio ou ser negativo.");
     }
