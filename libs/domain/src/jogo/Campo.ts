@@ -4,7 +4,7 @@ type ValorCampo = string | null;
 
 class Campo {
   private readonly indice: IndiceCampo;
-  private valor: ValorCampo;
+  private valor: ValorCampo = "1";
   private marcado: boolean;
   private considerar: boolean;
 

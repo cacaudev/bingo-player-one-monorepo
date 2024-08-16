@@ -12,9 +12,9 @@ describe('Campo', () => {
   });
 
   test('Deveria criar novo Campo com valor número', (done) => {
-    const aCampo = new Campo(new IndiceCampo(0,2), 32, true);
+    const aCampo = new Campo(new IndiceCampo(0,2), "32", true);
     expect(aCampo.getIndice()).toStrictEqual(new IndiceCampo(0, 2));
-    expect(aCampo.getValor()).toBe(32);
+    expect(aCampo.getValor()).toBe("32");
     expect(aCampo.getMarcado()).toBe(true);
     expect(aCampo.getConsiderar()).toBe(true);
     done();
