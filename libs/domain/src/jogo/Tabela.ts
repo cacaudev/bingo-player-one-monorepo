@@ -85,14 +85,15 @@ class Tabela {
 
   private static gerarTabelaInicial(
     quantidadeColunas: number,
-    quantidadeLinhas: number
+    quantidadeLinhas: number,
+    valorDefault: ValorCampo = "1"
   ): Campo[][] {
     const novosCampos = [];
     for (let i = 0; i < quantidadeLinhas; i++) {
       const novaLinha: Campo[] = [];
 
       for (let j = 0; j < quantidadeColunas; j++) {
-        novaLinha.push(new Campo(new IndiceCampo(i, j), null, false));
+        novaLinha.push(new Campo(new IndiceCampo(i, j), valorDefault, false));
       }
 
       novosCampos.push(novaLinha);

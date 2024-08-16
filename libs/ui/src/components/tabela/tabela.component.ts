@@ -18,5 +18,8 @@ export class TabelaComponent implements OnInit {
 
   ngOnInit(): void {
     this.tabela = new Tabela(this.tabelaColunas, this.tabelaLinhas);
+
+    console.log("this.tabela ", JSON.stringify(this.tabela, null, 2));
+
   }
 }
