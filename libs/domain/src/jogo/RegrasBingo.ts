@@ -29,7 +29,7 @@ class RegrasBingo {
    * Set Functions
    */
   public atualizarLinhaMarcada(regraAtualizada: boolean) {
-    this.verificarRegra(regraAtualizada);
+    RegrasBingo.verificarRegra(regraAtualizada);
     this.linhaMarcada = regraAtualizada;
     if (regraAtualizada) {
       this.tabelaMarcada = false;
@@ -37,7 +37,7 @@ class RegrasBingo {
     this.validarRegras();
   }
   public atualizarColunaMarcada(regraAtualizada: boolean) {
-    this.verificarRegra(regraAtualizada);
+    RegrasBingo.verificarRegra(regraAtualizada);
     this.colunaMarcada = regraAtualizada;
     if (regraAtualizada) {
       this.tabelaMarcada = false;
@@ -45,7 +45,7 @@ class RegrasBingo {
     this.validarRegras();
   }
   public atualizarTabelaMarcada(regraAtualizada: boolean) {
-    this.verificarRegra(regraAtualizada);
+    RegrasBingo.verificarRegra(regraAtualizada);
     this.tabelaMarcada = regraAtualizada;
     if (regraAtualizada) {
       this.colunaMarcada = false;
@@ -54,7 +54,7 @@ class RegrasBingo {
     this.validarRegras();
   }
 
-  private verificarRegra(regraAtualizada: boolean) {
+  public static verificarRegra(regraAtualizada: boolean) {
     const isVazio = (valor: boolean): boolean =>
       valor == null || valor == undefined;
     if (isVazio(regraAtualizada)) {
