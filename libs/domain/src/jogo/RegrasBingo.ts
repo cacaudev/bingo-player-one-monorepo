@@ -1,15 +1,37 @@
+interface IRegrasBingoDTO {
+  linhaMarcada: boolean;
+  colunaMarcada: boolean;
+  tabelaMarcada: boolean;
+}
+
 /**
  * Configuração para considerar o bingo
  */
 class RegrasBingo {
-  private linhaMarcada: boolean;
-  private colunaMarcada: boolean;
-  private tabelaMarcada: boolean;
+  private linhaMarcada = false;
+  private colunaMarcada = false;
+  private tabelaMarcada = true;
 
-  constructor() {
-    this.colunaMarcada = false;
-    this.linhaMarcada = false;
-    this.tabelaMarcada = false;
+  private constructor(
+    linhaMarcada: boolean,
+    colunaMarcada: boolean,
+    tabelaMarcada: boolean
+  ) {
+    this.atualizarLinhaMarcada(linhaMarcada);
+    this.atualizarColunaMarcada(colunaMarcada);
+    this.atualizarTabelaMarcada(tabelaMarcada);
+  }
+
+  public static criarPadrao() {
+    return new RegrasBingo(false, false, true);
+  }
+
+  public static criarCustomizado(
+    linhaMarcada: boolean,
+    colunaMarcada: boolean,
+    tabelaMarcada: boolean
+  ) {
+    return new RegrasBingo(linhaMarcada, colunaMarcada, tabelaMarcada);
   }
 
   /**
@@ -54,19 +76,23 @@ class RegrasBingo {
     this.validarRegras();
   }
 
+  public validarRegras() {
+    RegrasBingo.verificarRegra(this.colunaMarcada);
+    RegrasBingo.verificarRegra(this.linhaMarcada);
+    RegrasBingo.verificarRegra(this.tabelaMarcada);
+
+    if (!this.colunaMarcada && !this.linhaMarcada && !this.tabelaMarcada) {
+      throw new Error('Pelo menos uma regra deve estar marcada.');
+    }
+  }
+
   public static verificarRegra(regraAtualizada: boolean) {
     const isVazio = (valor: boolean): boolean =>
       valor == null || valor == undefined;
     if (isVazio(regraAtualizada)) {
-      throw new Error("Regra do jogo não pode ser vazia.");
-    }
-  }
-
-  public validarRegras() {
-    if (!this.colunaMarcada && !this.linhaMarcada && !this.tabelaMarcada) {
-      throw new Error('Pelo menos uma regra deve estar marcada.')
+      throw new Error('Regra do jogo não pode ser vazia.');
     }
   }
 }
 
-export { RegrasBingo };
+export { RegrasBingo, IRegrasBingoDTO };

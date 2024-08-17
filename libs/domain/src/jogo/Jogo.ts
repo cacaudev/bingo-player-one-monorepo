@@ -24,7 +24,7 @@ class Jogo {
     this.dataCriacao = new Date();
 
     this.tabela = new Tabela(quantidadeColunas, quantidadeLinhas);
-    this.regras = new RegrasBingo();
+    this.regras = RegrasBingo.criarPadrao();
   }
 
   /**

@@ -1,6 +1,11 @@
 import { Campo, ValorCampo } from './Campo';
 import { IndiceCampo } from './IndiceCampo';
 
+interface ITabelaDTO {
+  quantidadeColunas: number;
+  quantidadeLinhas: number;
+}
+
 class Tabela {
   private readonly quantidadeColunas: number;
   private readonly quantidadeLinhas: number;
@@ -86,7 +91,7 @@ class Tabela {
   private static gerarTabelaInicial(
     quantidadeColunas: number,
     quantidadeLinhas: number,
-    valorDefault: ValorCampo = "1"
+    valorDefault: ValorCampo = '1'
   ): Campo[][] {
     const novosCampos = [];
     for (let i = 0; i < quantidadeLinhas; i++) {
@@ -153,4 +158,4 @@ class Tabela {
   }
 }
 
-export { Tabela };
+export { Tabela, ITabelaDTO };

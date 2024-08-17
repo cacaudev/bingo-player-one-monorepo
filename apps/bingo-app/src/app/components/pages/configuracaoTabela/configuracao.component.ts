@@ -11,18 +11,25 @@ import {
 import { ButtonUIComponent } from '@bingo-player-one-monorepo/bingo-ui';
 import { JogoService } from '../../../infra/services/Jogo.service';
 import { Router } from '@angular/router';
+import {
+  IRegrasBingoDTO,
+  ITabelaDTO,
+  RegrasBingo,
+  Tabela,
+} from '@bingo-player-one-monorepo/bingo-domain';
 
 @Component({
   selector: 'app-configuracao',
   standalone: true,
-  imports: [CommonModule, ButtonUIComponent],
+  imports: [CommonModule, ButtonUIComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './configuracao.component.html',
   styleUrl: './configuracao.component.scss',
 })
 export class ConfiguracaoComponent implements OnInit {
   constructor(private jogoService: JogoService, private router: Router) {}
 
-  formConfiguracao!: FormGroup;
+  formTabela!: FormGroup;
+  formRegras!: FormGroup;
 
   botaoCriarIsLoading = false;
 
@@ -30,29 +37,81 @@ export class ConfiguracaoComponent implements OnInit {
    * @private
    * Método para criar o reactive form com a validação do domínio
    */
-  private criarFormulario() {
+  private criarFormularios() {
     const gridSizeValidators = [Validators.required];
     const regraValidators = [Validators.required];
 
-    this.formConfiguracao = new FormGroup({
-      numeroLinhas: new FormControl(3, gridSizeValidators),
-      numeroColunas: new FormControl(3, gridSizeValidators),
-      umaLinhaMarcada: new FormControl(false, regraValidators),
-      umaColunaMarcada: new FormControl(false, regraValidators),
-      todosOsCamposMarcados: new FormControl(true, regraValidators),
+    this.formTabela = new FormGroup({
+      quantidadeLinhas: new FormControl(3, gridSizeValidators),
+      quantidadeColunas: new FormControl(3, gridSizeValidators),
+    });
+
+    this.formRegras = new FormGroup({
+      linhaMarcada: new FormControl(false, regraValidators),
+      colunaMarcada: new FormControl(false, regraValidators),
+      tabelaMarcada: new FormControl(true, regraValidators),
     });
   }
 
   ngOnInit(): void {
-    this.formConfiguracao;
+    this.criarFormularios();
+    this.botaoCriarIsLoading = false;
   }
 
-  validarFormulario(): boolean {
+  validarFormularioTabela(tabelaDTO: ITabelaDTO): boolean {
+    if (!this.formTabela.valid) {
+      this.formTabela.markAllAsTouched();
+      return false;
+    }
+    try {
+      new Tabela(tabelaDTO.quantidadeColunas, tabelaDTO.quantidadeLinhas);
+    } catch (error) {
+      console.log('Erro do domínio: ', error);
+      return false;
+    }
+    return true;
+  }
+
+  validarFormularioRegras(regrasDTO: IRegrasBingoDTO): boolean {
+    if (!this.formRegras.valid) {
+      this.formRegras.markAllAsTouched();
+      return false;
+    }
+    try {
+      RegrasBingo.criarCustomizado(
+        regrasDTO.linhaMarcada,
+        regrasDTO.colunaMarcada,
+        regrasDTO.tabelaMarcada
+      );
+    } catch (error) {
+      console.log('Erro do domínio: ', error);
+      return false;
+    }
     return true;
   }
 
   criarJogo() {
-    this.jogoService.novoJogo(3, 3);
+    const regrasBingo = this.formRegras.getRawValue() as IRegrasBingoDTO;
+    if (!this.validarFormularioRegras(regrasBingo)) return;
+
+    const tabelaConfiguracao = this.formTabela.getRawValue() as ITabelaDTO;
+
+    if (!this.validarFormularioTabela(tabelaConfiguracao)) return;
+
+    this.botaoCriarIsLoading = true;
+
+    this.jogoService.novoJogo(
+      {
+        quantidadeColunas: tabelaConfiguracao.quantidadeColunas,
+        quantidadeLinhas: tabelaConfiguracao.quantidadeLinhas,
+      },
+      {
+        linhaMarcada: regrasBingo.linhaMarcada,
+        colunaMarcada: regrasBingo.colunaMarcada,
+        tabelaMarcada: regrasBingo.tabelaMarcada,
+      }
+    );
+    this.botaoCriarIsLoading = false;
     this.router.navigate(['/tabela']);
   }
 }

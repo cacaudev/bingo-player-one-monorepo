@@ -2,8 +2,8 @@ import { Jogo } from './Jogo';
 import { Campo, ValorCampo } from './Campo';
 import { IndiceCampo } from './IndiceCampo';
 import { NumeroSorteado } from './NumeroSorteado';
-import { RegrasBingo } from './RegrasBingo';
-import { Tabela } from './Tabela';
+import { RegrasBingo, IRegrasBingoDTO } from './RegrasBingo';
+import { Tabela, ITabelaDTO } from './Tabela';
 
 export {
   Jogo,
@@ -12,5 +12,7 @@ export {
   IndiceCampo,
   NumeroSorteado,
   RegrasBingo,
-  Tabela
+  IRegrasBingoDTO,
+  Tabela,
+  ITabelaDTO,
 };

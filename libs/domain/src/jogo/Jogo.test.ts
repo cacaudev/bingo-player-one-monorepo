@@ -8,7 +8,7 @@ describe('Jogo', () => {
   test('Deveria criar um novo jogo', (done) => {
     const aJogo = new Jogo('Teste', 2, 3);
     expect(aJogo.getNome()).toBe('Teste');
-    expect(aJogo.regras).toStrictEqual(new RegrasBingo());
+    expect(aJogo.regras).toStrictEqual(RegrasBingo.criarPadrao());
     expect(aJogo.tabela).toStrictEqual(new Tabela(2, 3));
     expect(aJogo.numerosSorteados).toStrictEqual([]);
     done();

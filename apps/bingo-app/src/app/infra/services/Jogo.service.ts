@@ -1,4 +1,8 @@
-import { Jogo, RegrasBingo, Tabela } from '@bingo-player-one-monorepo/bingo-domain';
+import {
+  Jogo,
+  RegrasBingo,
+  Tabela,
+} from '@bingo-player-one-monorepo/bingo-domain';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -12,10 +16,17 @@ export class JogoService {
   private jogoSubject = new BehaviorSubject<Jogo | null>(null);
   jogo$ = this.jogoSubject.asObservable();
 
-  novoJogo(numberOfLines: number, numberOfColumns: number) {
+  novoJogo(
+    tabela: { quantidadeLinhas: number; quantidadeColunas: number },
+    regras: {
+      linhaMarcada: boolean;
+      colunaMarcada: boolean;
+      tabelaMarcada: boolean;
+    }
+  ) {
     const currentDate = new Date();
     const nomeJogo = `Bingo - ${currentDate.toDateString()}`;
-    const aJogo = new Jogo(nomeJogo, numberOfColumns, numberOfLines);
+    const aJogo = new Jogo(nomeJogo, tabela.quantidadeColunas, tabela.quantidadeLinhas);
     this.jogoSubject.next(aJogo);
   }
 
@@ -48,6 +59,17 @@ export class JogoService {
   }
 
   setarRegras(regras: RegrasBingo) {
-   return true;
+    if (!this.jogoSubject.value) {
+      throw new Error('NO_GAME_ON_STORE');
+    }
+    this.jogoSubject.value.regras.atualizarLinhaMarcada(
+      regras.getLinhaMarcada()
+    );
+    this.jogoSubject.value.regras.atualizarColunaMarcada(
+      regras.getColunaMarcada()
+    );
+    this.jogoSubject.value.regras.atualizarTabelaMarcada(
+      regras.getTabelaMarcada()
+    );
   }
 }

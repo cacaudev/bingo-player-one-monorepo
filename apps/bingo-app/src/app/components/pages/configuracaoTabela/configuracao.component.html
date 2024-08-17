@@ -1,5 +1,53 @@
 <div>
   Selecione uma configuração para o jogo:
 
-  <button (click)="criarJogo()">Próximo</button><br>
+  <div class="c-form-tabela">
+    <p>Tamanho da tabela:</p>
+    <form [formGroup]="formTabela">
+      <label for="quantidadeLinhas">
+        Número de Linhas:
+        <input id="quantidadeLinhas" type="number" formControlName="quantidadeLinhas" />
+      </label>
+      <p
+        *ngIf="formTabela.controls['quantidadeLinhas'].errors?.['required']"
+        style="color: red"
+      >
+        Número de Linhas é obrigatório.
+      </p>
+      <label for="quantidadeColunas">
+        Número de Colunas:
+        <input
+          id="quantidadeColunas"
+          type="number"
+          formControlName="quantidadeColunas"
+        />
+      </label>
+      <p
+        *ngIf="formTabela.controls['quantidadeColunas'].errors?.['required']"
+        style="color: red"
+      >
+        Número de Colunas é obrigatório.
+      </p>
+    </form>
+  </div>
+  <div class="c-form-regras">
+    <p>Configuração para considerar bingo:</p>
+    <form [formGroup]="formRegras">
+      <label for="linhaMarcada">
+        Uma linha marcada:
+        <input id="linhaMarcada" type="boolean" />
+      </label>
+
+      <label for="colunaMarcada">
+        Uma coluna marcada:
+        <input id="colunaMarcada" type="number" />
+      </label>
+      <label for="tabelaMarcada">
+        Toda a tabela marcada:
+        <input id="tabelaMarcada" type="number" />
+      </label>
+    </form>
+  </div>
+
+  <button (click)="criarJogo()">Próximo</button><br />
 </div>
