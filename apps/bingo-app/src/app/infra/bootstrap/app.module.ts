@@ -18,7 +18,8 @@ import {
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FooterComponent } from "../../components/modules/footer/footer.component";
+import { NavbarComponent } from '../../components/modules/navbar/navbar.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -27,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     RouterModule,
-  ],
+    FooterComponent,
+    NavbarComponent
+],
   declarations: [AppComponent],
   providers: [
     { provide: 'IRouterProvider', useClass: RouterClientProvider },

@@ -1,0 +1,19 @@
+.l-page__footer {
+  height: var(--footer-height);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.l-page__footer__content {
+  width: 100%;
+  height: 100%;
+  padding: var(--page-content-padding);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--primary-50);
+}
