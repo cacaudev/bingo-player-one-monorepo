@@ -4,48 +4,29 @@
   <div class="c-form-tabela">
     <p>Tamanho da tabela:</p>
     <form [formGroup]="formTabela">
-      <label for="quantidadeLinhas">
-        Número de Linhas:
-        <input id="quantidadeLinhas" type="number" formControlName="quantidadeLinhas" />
-      </label>
-      <p
-        *ngIf="formTabela.controls['quantidadeLinhas'].errors?.['required']"
-        style="color: red"
-      >
-        Número de Linhas é obrigatório.
+
+      <p>
+
+        <select formControlName="tamanho">
+          <option [ngValue]="null" disabled>Tamanho da tabela:</option>
+          <option *ngFor="let tamanho of tamanhoTabelas" [ngValue]="tamanho.id">{{tamanho.nome}}</option>
+        </select>
       </p>
-      <label for="quantidadeColunas">
-        Número de Colunas:
-        <input
-          id="quantidadeColunas"
-          type="number"
-          formControlName="quantidadeColunas"
-        />
-      </label>
-      <p
-        *ngIf="formTabela.controls['quantidadeColunas'].errors?.['required']"
-        style="color: red"
-      >
-        Número de Colunas é obrigatório.
-      </p>
+
+
+
     </form>
   </div>
   <div class="c-form-regras">
     <p>Configuração para considerar bingo:</p>
     <form [formGroup]="formRegras">
-      <label for="linhaMarcada">
-        Uma linha marcada:
-        <input id="linhaMarcada" type="boolean" />
-      </label>
+      <p>
 
-      <label for="colunaMarcada">
-        Uma coluna marcada:
-        <input id="colunaMarcada" type="number" />
-      </label>
-      <label for="tabelaMarcada">
-        Toda a tabela marcada:
-        <input id="tabelaMarcada" type="number" />
-      </label>
+        <select formControlName="regra">
+          <option [ngValue]="null" disabled>Regras bingo:</option>
+          <option *ngFor="let regra of regrasBingo" [ngValue]="regra.id">{{regra.nome}}</option>
+        </select>
+      </p>
     </form>
   </div>
 
