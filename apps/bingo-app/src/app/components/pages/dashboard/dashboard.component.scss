@@ -1,0 +1,43 @@
+.c-dashboard {
+  padding: var(--page-content-padding);
+  background-image: linear-gradient(transparent 0%, rgb(176, 19, 4) 85%), url('/bingo-dashboard-freepik.jpg');
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  width: inherit;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.c-dashboard-container {
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.c-dashboard-container__title {
+  color: var(--primary-50);
+  flex: 1;
+  padding-bottom: 24px;
+}
+
+.c-dashboard-container__button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 16px 10px;
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-600);
+  cursor: pointer;
+  border-radius: 4px;
+}
