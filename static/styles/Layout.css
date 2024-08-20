@@ -1,12 +1,12 @@
 .l-page {
   min-height: 100%;
-  background-color: var(--body-bg);
 }
 
 .l-page__content {
   width: 100%;
   height: var(--page-content-height);
   margin-top: var(--header-height);
+  margin-bottom: var(--header-height);
 }
 
 /* mobile breakpoint */

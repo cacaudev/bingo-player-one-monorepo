@@ -1,6 +1,17 @@
 :root {
-  --primary-blue: rgb(0, 0, 255);
-  --secondary-blue: rgb(96, 96, 182);
+  --primary: #b01304;
+
+  --primary-50: #fff1f0;
+  --primary-100: #ffe0dd;
+  --primary-200: #ffc6c1;
+  --primary-300: #ff9e95;
+  --primary-400: #ff6758;
+  --primary-500: #ff3825;
+  --primary-600: #fd1b05;
+  --primary-700: #d61300;
+  --primary-800: #b01304;
+  --primary-900: #91170b;
+  --primary-950: #500700;
 
   /* Gray colors */
   --color-gray-1: #ffffff;
