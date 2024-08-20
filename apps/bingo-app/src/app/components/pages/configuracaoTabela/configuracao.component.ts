@@ -114,4 +114,8 @@ export class ConfiguracaoComponent implements OnInit {
     this.botaoCriarIsLoading = false;
     this.router.navigate(['/tabela']);
   }
+
+  voltarPaginaInicial() {
+    this.router.navigate(['/']);
+  }
 }

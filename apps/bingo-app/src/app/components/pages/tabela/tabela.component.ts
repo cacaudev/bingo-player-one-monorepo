@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { ButtonUIComponent } from '@bingo-player-one-monorepo/bingo-ui';
 import { JogoService } from '../../../infra/services/Jogo.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Tabela } from '@bingo-player-one-monorepo/bingo-domain';
 
 @Component({
@@ -16,7 +16,7 @@ import { Tabela } from '@bingo-player-one-monorepo/bingo-domain';
 export class TabelaComponent implements OnInit {
   tabelaAtual: Tabela | null = null;
 
-  constructor(private jogoService: JogoService) {
+  constructor(private jogoService: JogoService, private router: Router) {
     /**
      * Adiciona um observador para o jogo armazenado na store para sempre
      * atualizar a tabela atual com o valor armazenado
@@ -32,5 +32,8 @@ export class TabelaComponent implements OnInit {
 
   showTabelaNome(): string {
     return this.jogoService.getNome();
+  }
+  voltarPaginaInicial() {
+    this.router.navigate(['/']);
   }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonUIComponent } from '@bingo-player-one-monorepo/bingo-ui';
 import { JogoService } from '../../../infra/services/Jogo.service';
 import { Jogo } from '@bingo-player-one-monorepo/bingo-domain';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jogo',
@@ -14,7 +15,7 @@ import { Jogo } from '@bingo-player-one-monorepo/bingo-domain';
 export class JogoComponent implements OnInit {
   jogoAtual: Jogo | null = null;
 
-  constructor(private jogoService: JogoService) {
+  constructor(private jogoService: JogoService, private router: Router) {
     /**
      * Adiciona um observador para o jogo armazenado na store para sempre
      * atualizar o jogo atual com o valor armazenado
@@ -34,5 +35,9 @@ export class JogoComponent implements OnInit {
 
   jogarNumero(numeroSorteado: string) {
     this.jogoService.jogarNumeroSorteado(numeroSorteado);
+  }
+
+  criarNovoJogo() {
+    this.router.navigate(['/config']);
   }
 }
