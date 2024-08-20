@@ -1,0 +1,35 @@
+.c-topnavbar {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  background-color: var(--primary);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: all 0.25s ease-in-out;
+  z-index: 1005;
+}
+
+.c-topnavbar__container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--page-content-padding);
+  margin: 0 auto;
+
+  -webkit-box-pack: justify;
+  -webkit-box-align: center;
+  -webkit-box-align: center !important;
+}
+
+.c-topnavbar__title {
+  color: var(--primary-50);
+  font-weight: var(--font-weight-600);
+  font-size: var(--font-size-24);
+}
